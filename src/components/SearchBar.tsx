@@ -1,14 +1,17 @@
 import { HStack, Icon, Input } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
+import { ComponentProps } from "react";
 
-export function SeachBar() {
+type SeachBarProps = ComponentProps<typeof Input>;
+
+export function SeachBar({ ...rest }: SeachBarProps) {
   return (
-    <HStack w="full" space={5} alignSelf="center">
+    <HStack w="full" mb={6} space={5} alignSelf="center">
       <Input
-        placeholder="Pesquisar"
+        {...rest}
         width="full"
         borderRadius="4"
-        bg='white'
+        bg="white"
         py={3}
         px={4}
         fontSize="16"

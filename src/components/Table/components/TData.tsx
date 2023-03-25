@@ -1,7 +1,13 @@
 import { Heading, HStack, VStack, Text } from "native-base";
 import { Platform } from "react-native";
+import { EmployeesDTO } from "../../../DTOs/EmployeesDTO";
+import { dateMask, phoneMask } from "../../../utils/Mask";
 
-export function TData() {
+type TDataProps = {
+  data: EmployeesDTO;
+};
+
+export function TData({ data }: TDataProps) {
   const border = Platform.OS === "android" ? "dashed" : "solid";
 
   return (
@@ -23,7 +29,7 @@ export function TData() {
         </Heading>
 
         <Text fontSize="md" fontFamily="mono" color="gray.700">
-          Front-end
+          {data.job}
         </Text>
       </HStack>
 
@@ -44,7 +50,7 @@ export function TData() {
         </Heading>
 
         <Text fontSize="md" fontFamily="mono">
-          00/00/0000
+          {dateMask(data.admission_date)}
         </Text>
       </HStack>
 
@@ -65,7 +71,7 @@ export function TData() {
         </Heading>
 
         <Text fontSize="md" fontFamily="mono">
-          +55 (55) 55555-555
+          {phoneMask(data.phone)}
         </Text>
       </HStack>
     </VStack>
