@@ -12,7 +12,6 @@ export function KeyboardAvoidingView({ children }: Props) {
       <KeyView
         h="100%"
         w="100%"
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
         px={5}
         flex={1}
       >
