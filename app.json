@@ -21,7 +21,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1C1C1C"
-      }
+      },
+      "package": "com.bemobile"
     },
     "web": {
       "favicon": "./assets/adaptive-icon.png"
